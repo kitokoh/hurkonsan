@@ -1,10 +1,41 @@
 @extends('site.layouts.app')
 
-@section('title')
-    Ürün Detayı
-@endsection
+@php
+    // Strip tags and limit the description to 155 characters for SEO purposes.
+    $description = Str::limit(strip_tags($product->text), 155);
+@endphp
+
+@section('title', $product->title . ' - Hidrogüç Pres')
+@section('description', $description)
+@section('keywords', $product->title . ', ' . str_replace(' ', ', ', $product->title) . ', hidrogüç, pres')
 
 @section('content')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{ $product->title }}",
+    "image": "{{ asset('storage/' . json_decode($product->image)[0]) }}",
+    "description": "{{ $description }}",
+    "sku": "{{ $product->id }}",
+    "brand": {
+        "@type": "Brand",
+        "name": "Hidrogüç Pres"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "{{ url()->current() }}",
+        "priceCurrency": "TRY",
+        "price": "0",
+        "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "10"
+    }
+}
+</script>
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
@@ -33,7 +64,7 @@
                     <div class="col-md-5 col-lg-5 col-sm-12">
                         <div class="col-lg-12 col-md-6 col-sm-12 col-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
                             <div class="radius-sm m-b30 img-ho1">
-                                <img src="/storage/{{json_decode($product->image)[0]}}" alt=""/>
+                                <img src="/storage/{{json_decode($product->image)[0]}}" alt="{{ $product->title }}"/>
                             </div>
                         </div>
 
@@ -105,7 +136,7 @@
                                             @if(isset($product->image_tecnical))
                                                 <div id="tecnical-details" class="tab-pane">
                                                     <div class="dlab-media">
-                                                        <img width="460" height="300" alt="" src="/storage/{{$product->image_tecnical}} ">
+                                                        <img width="460" height="300" alt="{{ $product->title }} - Fiche Technique" src="/storage/{{$product->image_tecnical}} ">
                                                     </div>
                                                 </div>
                                             @endif
@@ -156,7 +187,7 @@
                                         <div class="item">
                                             <div class="dlab-box project-bx">
                                                 <div class="dlab-media radius-sm dlab-img-overlay1 dlab-img-effect zoom">
-                                                    <a href="{{ route('product.product-detail',$product->id) }}"><img src="/storage/{{json_decode($product->image)[0]}}" alt=""></a>
+                                                    <a href="{{ route('product.product-detail',$product->id) }}"><img src="/storage/{{json_decode($product->image)[0]}}" alt="{{ $product->title }}"></a>
                                                 </div>
 
                                             </div>

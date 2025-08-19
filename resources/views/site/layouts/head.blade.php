@@ -2,24 +2,27 @@
     <meta charset="utf-8">
 
     <!--====== Title ======-->
-    <title>@yield('title')</title>
+    <title>@yield('title', 'Hidrogüç Pres')</title>
 
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Hidrogüç Pres" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
-    <meta name="description" content="Hidrogüç Pres" />
-    <meta property="og:title" content="Hidrogüç Pres" />
-    <meta property="og:description" content="Hidrogüç Pres" />
+    <meta name="author" content="Hidrogüç Pres" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@yield('description', 'Hidrogüç Pres - Solutions de presses hydrauliques et industrielles.')" />
+    <meta name="keywords" content="@yield('keywords', 'presse hydraulique, presse industrielle, solutions industrielles, Hidrogüç Pres')" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('title', 'Hidrogüç Pres')" />
+    <meta property="og:description" content="@yield('description', 'Hidrogüç Pres - Solutions de presses hydrauliques et industrielles.')" />
+    {{-- <meta property="og:image" content="@yield('og_image', asset('site/assets/images/logo/logo.png'))" /> --}}
+
     <meta name="format-detection" content="telephone=no">
 
     <!-- FAVICONS ICON -->
     <link rel="icon" href="{{ asset('site/assets/images/logo/H.png') }}" type="image/x-icon" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('site/assets/images/logo/H.png') }}" />
-
-    <!-- PAGE TITLE HERE -->
-    <title>Hidrogüç Pres</title>
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
