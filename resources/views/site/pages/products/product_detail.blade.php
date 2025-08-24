@@ -5,9 +5,9 @@
     $description = Str::limit(strip_tags($product->text), 155);
 @endphp
 
-@section('title', $product->title . ' - Hidrogüç Pres')
+@section('title', $product->title . ' - Hürkonsan Pres')
 @section('description', $description)
-@section('keywords', $product->title . ', ' . str_replace(' ', ', ', $product->title) . ', hidrogüç, pres')
+@section('keywords', $product->title . ', ' . str_replace(' ', ', ', $product->title) . ', hürkonsan, pres')
 
 @section('content')
 <script type="application/ld+json">
@@ -20,7 +20,7 @@
     "sku": "{{ $product->id }}",
     "brand": {
         "@type": "Brand",
-        "name": "Hidrogüç Pres"
+        "name": "Hürkonsan Pres"
     },
     "offers": {
         "@type": "Offer",

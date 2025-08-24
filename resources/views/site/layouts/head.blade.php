@@ -2,20 +2,20 @@
     <meta charset="utf-8">
 
     <!--====== Title ======-->
-    <title>@yield('title', 'Hidrogüç Pres')</title>
+    <title>@yield('title', 'Hürkonsan Pres')</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Hidrogüç Pres" />
+    <meta name="author" content="Hürkonsan Pres" />
     <meta name="robots" content="index, follow" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="@yield('description', 'Hidrogüç Pres - Solutions de presses hydrauliques et industrielles.')" />
-    <meta name="keywords" content="@yield('keywords', 'presse hydraulique, presse industrielle, solutions industrielles, Hidrogüç Pres')" />
+    <meta name="description" content="@yield('description', 'Hürkonsan Pres - Solutions de presses hydrauliques et industrielles.')" />
+    <meta name="keywords" content="@yield('keywords', 'presse hydraulique, presse industrielle, solutions industrielles, Hürkonsan Pres')" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="@yield('title', 'Hidrogüç Pres')" />
-    <meta property="og:description" content="@yield('description', 'Hidrogüç Pres - Solutions de presses hydrauliques et industrielles.')" />
+    <meta property="og:title" content="@yield('title', 'Hürkonsan Pres')" />
+    <meta property="og:description" content="@yield('description', 'Hürkonsan Pres - Solutions de presses hydrauliques et industrielles.')" />
     {{-- <meta property="og:image" content="@yield('og_image', asset('site/assets/images/logo/logo.png'))" /> --}}
 
     <meta name="format-detection" content="telephone=no">

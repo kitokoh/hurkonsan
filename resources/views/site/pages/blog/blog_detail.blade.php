@@ -5,9 +5,9 @@
     $description = Str::limit(strip_tags($blog->text), 155);
 @endphp
 
-@section('title', $blog->name . ' - Hidrogüç Pres')
+@section('title', $blog->name . ' - Hürkonsan Pres')
 @section('description', $description)
-@section('keywords', $blog->name . ', ' . str_replace(' ', ', ', $blog->name) . ', blog, hidrogüç, pres')
+@section('keywords', $blog->name . ', ' . str_replace(' ', ', ', $blog->name) . ', blog, hürkonsan, pres')
 @section('content')
 <script type="application/ld+json">
 {
@@ -18,11 +18,11 @@
     "image": "{{ asset('storage/' . json_decode($blog->image_inner_page)[0]) }}",
     "author": {
         "@type": "Organization",
-        "name": "HİDROGÜÇ"
+        "name": "Hürkonsan"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Hidrogüç Pres",
+        "name": "Hürkonsan Pres",
         "logo": {
             "@type": "ImageObject",
             "url": "{{ asset('site/assets/images/logo/H.png') }}"
@@ -59,7 +59,7 @@
                 <div class="blog-post blog-single">
                     <div class="dlab-post-meta m-b20">
                         <ul>
-                            <li class="post-author"> HİDROGÜÇ</li>
+                            <li class="post-author"> Hürkonsan</li>
                         </ul>
                     </div>
                     <div class="dlab-post-title">
