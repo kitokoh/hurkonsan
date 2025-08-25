@@ -9,7 +9,7 @@
     <div class="page-content bg-white">
         <!-- inner page banner -->
         <div class="dlab-bnr-inr overlay-black-middle text-center bg-pt"
-             style="background-image:url({{ asset('site/assets/images/hidroguc1.png') }});">
+             style="background-image:url({{ asset('site/assets/images/hurkonsan1.png') }});">
             <div class="container">
                 <div class="dlab-bnr-inr-entry align-m text-center">
                     <h1 class="text-white">{{__('header.about_us')}}</h1>

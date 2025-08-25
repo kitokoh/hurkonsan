@@ -24,6 +24,6 @@ class MailSiteController extends Controller
             $objDemo->type = $type;
         }
 
-        Mail::to("bilgi@hidrogucpres.com")->send(new ContactMail($objDemo));
+        Mail::to("bilgi@hurkonsanpres.com")->send(new ContactMail($objDemo));
     }
 }

@@ -32,8 +32,8 @@ class ContactMail extends Mailable
     public function build()
     {
         if($this->data->type == 'contact_form'){
-            return $this->from('bilgi@hidrogucpres.com','Hidroguc İletişim Formu')
-                ->subject('Hidroguc İletişim Formu')
+            return $this->from('bilgi@hurkonsanpres.com','Hurkonsan İletişim Formu')
+                ->subject('Hurkonsan İletişim Formu')
                 ->text('mails.contact_plain');
         }
     }

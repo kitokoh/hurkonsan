@@ -1,9 +1,37 @@
 @extends('site.layouts.app')
-@section('title')
-{{$blog->name}}
-@endsection
-@section('content')
 
+@php
+    // Strip tags and limit the description to 155 characters for SEO purposes.
+    $description = Str::limit(strip_tags($blog->text), 155);
+@endphp
+
+@section('title', $blog->name . ' - Hürkonsan Pres')
+@section('description', $description)
+@section('keywords', $blog->name . ', ' . str_replace(' ', ', ', $blog->name) . ', blog, hürkonsan, pres')
+@section('content')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ $blog->name }}",
+    "description": "{{ $description }}",
+    "image": "{{ asset('storage/' . json_decode($blog->image_inner_page)[0]) }}",
+    "author": {
+        "@type": "Organization",
+        "name": "Hürkonsan"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hürkonsan Pres",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset('site/assets/images/logo/H.png') }}"
+        }
+    },
+    "datePublished": "{{ $blog->created_at->toIso8601String() }}",
+    "dateModified": "{{ $blog->updated_at->toIso8601String() }}"
+}
+</script>
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
@@ -31,14 +59,14 @@
                 <div class="blog-post blog-single">
                     <div class="dlab-post-meta m-b20">
                         <ul>
-                            <li class="post-author"> HİDROGÜÇ</li>
+                            <li class="post-author"> Hürkonsan</li>
                         </ul>
                     </div>
                     <div class="dlab-post-title">
                         <h4 class="post-title m-t0" style="margin-bottom: 25px; font-size: 35px">{{ $blog->name }}</a></h4>
                     </div>
                     <div class="dlab-post-media dlab-img-effect zoom-slow">
-                        <a href="javascript:void(0)"><img src="/storage/{{json_decode($blog->image_inner_page)[0]}}" alt=""></a>
+                        <a href="javascript:void(0)"><img src="/storage/{{json_decode($blog->image_inner_page)[0]}}" alt="{{ $blog->name }}"></a>
                     </div>
                     <div class="dlab-post-text">
                         <p>{!! $blog->text  !!}</p>
@@ -61,7 +89,7 @@
                                 <div class="item">
                                     <div class="dlab-box project-bx">
                                         <div class="dlab-media radius-sm dlab-img-overlay1 dlab-img-effect zoom">
-                                            <a href="{{ route('blog.blog-detail',$blog->slug) }}"><img src="/storage/{{$blog->image[0]}}" alt=""></a>
+                                            <a href="{{ route('blog.blog-detail',$blog->slug) }}"><img src="/storage/{{$blog->image[0]}}" alt="{{ $blog->name }}"></a>
                                         </div>
 
                                     </div>

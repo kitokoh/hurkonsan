@@ -6,7 +6,7 @@
             <div class="container clearfix">
                 <!-- website logo -->
                 <div class="logo-header mostion logo-white">
-                    <a href="{{ route('front.home') }}"><img src="{{ asset('site/assets/images/logo/hidroyeni2.png') }}" alt=""></a>
+                    <a href="{{ route('front.home') }}"><img src="{{ asset('site/assets/images/logo/hidroyeni2.png') }}" alt="Hürkonsan Pres Logo"></a>
                 </div>
                 <!-- nav toggle button -->
                 <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
@@ -33,7 +33,7 @@
                 <!-- main nav -->
                 <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                     <div class="logo-header d-md-block d-lg-none">
-                        <a href="{{ route('front.home') }}"><img src="{{ asset('site/assets/images/logo/hidroyeni2.png') }}" alt=""></a>
+                        <a href="{{ route('front.home') }}"><img src="{{ asset('site/assets/images/logo/hidroyeni2.png') }}" alt="Hürkonsan Pres Logo"></a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li  class="{{ Route::is('front.home') ? 'active': '' }} has-mega-menu"><a href="{{ route('front.home') }}">{{__('header.home')}}</a>
